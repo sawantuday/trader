@@ -15,6 +15,23 @@ public class Ticker {
 		
 	}
 	
+	public static Ticker fromJSON(String json){
+ 		JSONParser parser = new JSONParser();
+ 		Ticker ticker = new Ticker();
+		try{
+			Object obj = parser.parse(json);
+			JSONArray data = (JSONObject)obj;
+			JSONObject object = data.get("ticker");
+			ticker.setHigh(object.get("high"));
+			ticker.setLow(object.get("low");
+			ticker.setClose(object.get("last"));
+		}catch(ParseException e){
+			e.printStackTrace();
+			System.out.println("Error occurred while parsing json");
+		}
+		return ticker;
+	}
+	
 	//TODO
 	public boolean isMarobuzo(){
 		return false;

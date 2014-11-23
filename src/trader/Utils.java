@@ -26,9 +26,10 @@ public class Utils {
 		}
 		
 		Gson gson = new Gson();
-		Ticker ticker = gson.fromJson(json, Ticker.class);
+		Ticker ticker = Ticker.fromJSON(json);	//gson.fromJson(json, Ticker.class);
 		return ticker;
 	}
+	
 
 	private void getFromBitcoinCharts() {
 	}
