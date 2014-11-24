@@ -2,6 +2,7 @@ package trader;
 
 public class TickerWrapper {
 	public Ticker ticker;
+	
 	public static class Ticker {
 		public double high ;
 		public double low ;
