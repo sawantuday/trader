@@ -18,7 +18,7 @@ public class Utils {
 	
 	private static String btceUrl = "https://btc-e.com/api/2/btc_usd/ticker";
 	
-	public static Ticker getFromBtce() {
+	public static TickerWrapper getFromBtce() {
 		String json = httpGet(btceUrl);
 		if(json == null){
 			System.out.println("ticker data not found");
@@ -26,14 +26,14 @@ public class Utils {
 		}
 		
 		Gson gson = new Gson();
-		Ticker ticker = gson.fromJson(json, Ticker.class);
+		TickerWrapper ticker = gson.fromJson(json, TickerWrapper.class);
 		return ticker;
 	}
 
 	private void getFromBitcoinCharts() {
 	}
 
-	public ArrayList<Ticker> fetchData(String start, String end, String length) {
+	public ArrayList<TickerWrapper> fetchData(String start, String end, String length) {
 		return null;
 	}
 
